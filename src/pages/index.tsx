@@ -1,21 +1,8 @@
-import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
 import Table from "./components/Table";
 import axios from "axios";
 import { useEffect, useState } from "react";
-
-
-// const columns = [
-//   { label: "ID", accessor: "id", sortable: true, sortbyOrder: "desc" },
-//   { label: "Avatar", accessor: "avatar", sortable: false },
-//   { label: "First Name", accessor: "firstname", sortable: true },
-//   { label: "Last Name", accessor: "lastname", sortable: true },
-//   { label: "Gender", accessor: "gender", sortable: true },
-//   { label: "Age", accessor: "birthday", sortable: true },
-//   { label: "Contact", accessor: "phone", sortable: false },
-// ];
+import {InfinitySpin } from 'react-loader-spinner'
 
 const columns = [
 
@@ -132,10 +119,13 @@ export default function Home() {
 
 
   return ( 
-    !render&&(<div className="text-4xl uppercase text-center mx-auto h-screen border-4 flex items-center justify-center"><h2>loading data</h2></div>) ||
+    !render&&(<div className="text-4xl uppercase text-center mx-auto h-screen border-4 flex items-center justify-center bg-slate-300"><InfinitySpin 
+    width='200'
+    color="#4fa94d"
+  /></div>) ||
     render && (
       
-      <div className="table_container">
+      <div className="table_container bg-slate-300 w-screen">
         <h1 className="text-2xl text-center">Submission by Sunil Band ph-8390685016 , email-sunilbandwork@gmail.com</h1>
         <Table
           caption="Users which have income lower than $5 USD and have a car of brand “BMW” or “Mercedes"
