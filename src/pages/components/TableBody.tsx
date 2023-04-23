@@ -10,7 +10,7 @@ const TableBody = (props: Props) => {
   let address = "";
   return (
     <tbody>
-      {props.tableData.map((data:any) => {
+      {props.tableData?props.tableData.map((data:any) => {
         return (
           <tr key={data.id}>
             {props.columns.map(({ accessor }:any) => {
@@ -22,7 +22,7 @@ const TableBody = (props: Props) => {
             })}
           </tr>
         );
-      })}
+      }):null}
     </tbody>
   );
 };
