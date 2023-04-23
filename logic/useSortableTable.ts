@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function getDefaultSorting(defaultTableData:any, columns:any) {
+function getDefaultSorting(defaultTableData:String[], columns:any) {
   const sorted = [...defaultTableData].sort((a, b) => {
     const filterColumn = columns.filter((column:any) => column.sortbyOrder);
 
