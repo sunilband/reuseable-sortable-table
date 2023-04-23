@@ -134,7 +134,9 @@ export default function Home() {
   return ( 
     !render&&(<div className="text-4xl uppercase text-center mx-auto h-screen border-4 flex items-center justify-center"><h2>loading data</h2></div>) ||
     render && (
+      
       <div className="table_container">
+        <h1 className="text-2xl text-center">Submission by Sunil Band ph-8390685016 , email-sunilbandwork@gmail.com</h1>
         <Table
           caption="Users which have income lower than $5 USD and have a car of brand “BMW” or “Mercedes"
           data={query1}
