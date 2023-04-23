@@ -131,7 +131,8 @@ export default function Home() {
 
 
 
-  return (
+  return ( 
+    !render&&(<div className="text-4xl uppercase text-center mx-auto h-screen border-4 flex items-center justify-center"><h2>loading data</h2></div>) ||
     render && (
       <div className="table_container">
         <Table
