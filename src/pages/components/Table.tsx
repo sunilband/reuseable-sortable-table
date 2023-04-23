@@ -16,7 +16,7 @@ type Props = {
 const Table = (props: Props) => {
   const [tableData, handleSorting] = useSortableTable(props.data, props.columns);
   return (
-          <><h2 className="text-4xl">{props.caption}</h2>
+          <><h2 className="text-4xl text-center mt-4 mb-4">{props.caption}</h2>
             <table className="table">
               <TableHead {...{ columns:props.columns, handleSorting }} setRows={props.setRows} rows={props.rows} />
               <TableBody {...{ columns:props.columns, tableData }} />

@@ -59,7 +59,7 @@ export default function Home() {
     const dataFetch=async()=>{
       // first query
       await axios
-      .post("http://localhost:5000/getData",{
+      .post("https://userdata-tables-api.vercel.app/getData",{
         "income": {
           "$lt": "$5"
         },
@@ -75,14 +75,14 @@ export default function Home() {
       })
       // second query
           await axios
-        .post("http://localhost:5000/getData",{ "gender": "Male", "phone_price": { "$gt": "10000" } })
+        .post("https://userdata-tables-api.vercel.app/getData",{ "gender": "Male", "phone_price": { "$gt": "10000" } })
         .then((x) => {
           setQuery2(x.data)
         })
       // third query
      
           await axios
-          .post("http://localhost:5000/getData",{
+          .post("https://userdata-tables-api.vercel.app/getData",{
             "last_name": { "$regex": "^M" },
             "quote": { "$exists": true, "$gt": 15 },
             "email": { "$regex": ".*M$", "$options": "i" }
@@ -94,7 +94,7 @@ export default function Home() {
       
       // fourth query
           await axios
-          .post("http://localhost:5000/getData",{
+          .post("https://userdata-tables-api.vercel.app/getData",{
             "car": { "$in": ["BMW", "Mercedes", "Audi"] },
             "email": { "$not": { "$regex": "\\d" } }
           })
@@ -104,7 +104,7 @@ export default function Home() {
         
       // fifth query
           await axios
-          .post("http://localhost:5000/agg",{
+          .post("https://userdata-tables-api.vercel.app/agg",{
             "aggregate": "collection",
             "pipeline": [
               { "$group": { "_id": "$city", "count": { "$sum": 1 }, "avg_income": { "$avg": { "$toDouble": { "$substr": ["$income", 1, -1] } } }  } },
@@ -141,7 +141,7 @@ export default function Home() {
           setRows={setRows}
           rows={rows}
         />
-<br />
+      <br />
       <Table
           caption="Male Users which have phone price greater than 10,000"
           data={query2}
