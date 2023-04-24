@@ -125,7 +125,7 @@ export default function Home() {
   /></div>) ||
     render && (
       
-      <div className="table_container bg-slate-300 w-screen">
+      <div className="table_container bg-zinc-100 w-screen" >
         <h1 className="text-2xl text-center">Submission by Sunil Band ph-8390685016 , email-sunilbandwork@gmail.com</h1>
         <Table
           caption="Users which have income lower than $5 USD and have a car of brand “BMW” or “Mercedes"

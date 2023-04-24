@@ -4,8 +4,6 @@ const Model = require("../models/DataModel");
 module.exports.getData = async (req, res) => {
   try {
     const data = await Model.find(req.body);
-    console.log(req.body)
-    console.log(data.length)
     res.json(data);
   } catch (err) {
     res.send(err);
@@ -18,8 +16,6 @@ module.exports.getData = async (req, res) => {
 module.exports.aggrigate = async (req, res) => {
   try {
     const data = await Model.aggregate(req.body.pipeline);
-    console.log(req.body)
-    console.log(data.length)
     res.json(data);
   } catch (err) {
     res.send(err);
